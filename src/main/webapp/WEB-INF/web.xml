@@ -19,5 +19,13 @@
         <servlet-name>Authorization</servlet-name>
         <url-pattern>/authorization</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>AuthorizationServlet</servlet-name>
+        <servlet-class>by.library.JWD_FinalTask.controller.commands.AuthorizationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AuthorizationServlet</servlet-name>
+        <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
 
 </web-app>

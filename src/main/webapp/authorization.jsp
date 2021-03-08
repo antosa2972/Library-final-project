@@ -10,7 +10,7 @@
 <head>
     <title>Authorization</title>
 </head>
-<form method="post" action="AuthorizationServlet" name="AuthorizationForm" onsubmit="return validate();">
+<form method="post" action="${pageContext.request.contextPath}/auth" name="AuthorizationForm" onsubmit="return validate();">
 
     Username :<input type="text" name="username_txt">
     Password :<input type="password" name="password_txt">

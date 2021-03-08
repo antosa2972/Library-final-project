@@ -14,7 +14,7 @@ public class DAOAuthorize implements DAOOperation {
         try {
             driver = new com.mysql.cj.jdbc.Driver();
             DriverManager.registerDriver(driver);
-            connection = DriverManager.getConnection(URL, login, password);
+            connection = DriverManager.getConnection(URL, LOGIN, PASSWORD);
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -31,6 +31,8 @@ public class DAOAuthorize implements DAOOperation {
                             resultSet.getString(7));
                 }
             }
+            preparedStatement.close();
+            connection.close();
         }catch (SQLException e){
             e.printStackTrace();
         }
