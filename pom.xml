@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>by.library</groupId>
-    <artifactId>JWD-Web</artifactId>
+    <groupId>by.tc.library</groupId>
+    <artifactId>JWD-WebTask</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>JWD-Web</name>
+    <name>JWD-WebTask</name>
     <packaging>war</packaging>
 
     <properties>
@@ -35,19 +35,15 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl-api -->
-        <dependency>
-            <groupId>javax.servlet.jsp.jstl</groupId>
-            <artifactId>jstl-api</artifactId>
-            <version>1.2</version>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.23</version>
         </dependency>
+
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
