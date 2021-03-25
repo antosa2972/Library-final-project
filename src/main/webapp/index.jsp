@@ -12,6 +12,6 @@
     <title>Title</title>
 </head>
 <body>
-<% response.sendRedirect("Controller?command=loadfirstpage"); %>
+<% response.sendRedirect("Controller?command=loadmainpage"); %>
 </body>
 </html>

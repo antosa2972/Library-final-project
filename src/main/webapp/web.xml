@@ -11,4 +11,12 @@
         <servlet-name>Controller</servlet-name>
         <url-pattern>/Controller</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>First_page</servlet-name>
+        <jsp-file>/WEB-INF/jsp/firs_page.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>First_page</servlet-name>
+        <url-pattern>/jsp</url-pattern>
+    </servlet-mapping>
 </web-app>

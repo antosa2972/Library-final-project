@@ -14,6 +14,8 @@ public class CommandProvider {
         commands.put(CommandName.LOADAUTHPAGE,new LoadAuthPage());
         commands.put(CommandName.AUTHORIZATION, new Authorization());
         commands.put(CommandName.LOADMAINPAGE,new LoadMainPage());
+        commands.put(CommandName.LOGOUT,new LogOut());
+        commands.put(CommandName.CHANGELOCALE,new ChangeLocale());
     }
     public Command takeCommand(String name){
         CommandName commandName;

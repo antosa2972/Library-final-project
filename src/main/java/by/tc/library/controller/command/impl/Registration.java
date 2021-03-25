@@ -13,22 +13,24 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class Registration implements Command {
-    private static final String USERNAME_PARAM = "username";
+    private static final String USERNAME_PARAM = "username_reg";
     private static final String EMAIL_PARAM = "email";
-    private static final String PASSWORD_PARAM = "password";
+    private static final String PASSWORD_PARAM = "password_reg";
+    private static final String PASSWORD_CONFIRM_PARAM = "password_confirm";
     private static final String TELEPHONE_PARAM = "telephone";
     private static final String NAME = "name";
     private static final String SURNAME = "surname";
     private static final String CHECKBOX_PARAM = "checkbox";
     private static final String CHECKBOX_ON = "on";
     private static final String LOAD_MAIN_PAGE = "Controller?command=loadmainpage";
-    private static final String REG_PAGE_PATH = "/WEB-INF/jsp/registration.jsp";
+    private static final String REG_PAGE_PATH = "/WEB-INF/jsp/firs_page.jsp";
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter(USERNAME_PARAM);
         String email = request.getParameter(EMAIL_PARAM);
         String password = request.getParameter(PASSWORD_PARAM);
+        String passwordConfirm = request.getParameter(PASSWORD_CONFIRM_PARAM);
         String telephone = request.getParameter(TELEPHONE_PARAM);
         String name = request.getParameter(NAME);
         String surname = request.getParameter(SURNAME);
@@ -38,7 +40,6 @@ public class Registration implements Command {
         if (checkValue != null && checkValue.equals(CHECKBOX_ON)) {
             isAdmin = true;
         }
-
         UserInfo userInfo = new UserInfo(username, telephone, password, email, name, surname, isAdmin);
         ServiceProvider serviceProvider = ServiceProvider.getInstance();
         UserService userService = serviceProvider.getUserService();

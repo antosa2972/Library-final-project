@@ -6,5 +6,7 @@ public enum CommandName {
     REGISTRATION,
     LOADAUTHPAGE,
     LOADMAINPAGE,
-    AUTHORIZATION
+    AUTHORIZATION,
+    LOGOUT,
+    CHANGELOCALE
 }

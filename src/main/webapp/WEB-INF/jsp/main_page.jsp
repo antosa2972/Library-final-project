@@ -1,18 +1,27 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Antonio
-  Date: 12.03.2021
-  Time: 14:33
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <head>
-    <title>Library : Main</title>
+    <meta charset="UTF-8">
+    <style>
+        <%@include file="/WEB-INF/css/style_mainpage.css"%>
+    </style>
 </head>
 <body>
-<h1>
-    Library Main Page
-</h1>
+<form action="Controller" method="post">
+    <c:choose>
+        <c:when test="${sessionScope.auth==null}">
+            <div class="sign-in-up">
+                <button id="auth" type="submit" name="command" value="loadfirstpage">Sign in/Sign up</button>
+            </div>
+        </c:when>
+        <c:otherwise>
+            <div class="username">
+                <label>Welcome, ${login.username}</label>
+                <button id="logout" type="submit" name="command" value="logout">Log out</button>
+            </div>
+        </c:otherwise>
+    </c:choose>
+</form>
 </body>
 </html>
