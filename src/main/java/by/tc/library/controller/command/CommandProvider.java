@@ -16,6 +16,9 @@ public class CommandProvider {
         commands.put(CommandName.LOADMAINPAGE,new LoadMainPage());
         commands.put(CommandName.LOGOUT,new LogOut());
         commands.put(CommandName.CHANGELOCALE,new ChangeLocale());
+        commands.put(CommandName.LOADADDINGBOOKPAGE,new LoadAddingBookPage());
+        commands.put(CommandName.LOADCATALOGPAGE,new LoadCatalogPage());
+        commands.put(CommandName.SHOWBOOKS,new ShowBooks());
     }
     public Command takeCommand(String name){
         CommandName commandName;

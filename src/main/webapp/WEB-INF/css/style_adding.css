@@ -1,0 +1,9 @@
+.group{
+   padding-bottom: 5px;
+}
+div.group label {
+    display: block;
+    float: left;
+    width: 150px;
+    height: 15px;
+}

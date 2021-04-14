@@ -18,6 +18,7 @@ public class Authorization implements Command {
     private static final String PASSWORD_PARAM = "password";
     private static final String LOAD_MAIN_PAGE = "Controller?command=loadmainpage";
     private static final String AUTH_ATTRIBUTE = "auth";
+    private static final String ADMIN_ATTRIBUTE = "isAdmin";
     private static final String AUTH_PAGE_PATH = "WEB-INF/jsp/authorization.jsp";
     private static final String USERNAME_ATTRIBUTE = "login";
 
@@ -36,6 +37,7 @@ public class Authorization implements Command {
             authorizedUser = userService.authorization(userInfo);
             HttpSession httpSession = request.getSession(true);
             httpSession.setAttribute(AUTH_ATTRIBUTE,true);
+            httpSession.setAttribute(ADMIN_ATTRIBUTE,authorizedUser.isAdmin());
             httpSession.setAttribute(USERNAME_ATTRIBUTE,authorizedUser);
             response.sendRedirect(LOAD_MAIN_PAGE);
 

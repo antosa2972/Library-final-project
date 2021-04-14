@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: Antonio
+  Date: 08.04.2021
+  Time: 0:34
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <style>
-        <%@include file="/WEB-INF/css/style_mainpage.css"%>
-    </style>
+    <title>Catalog page</title>
+    <style><%@include file="/WEB-INF/css/style_mainpage.css"%></style>
 </head>
 <body>
 <form action="Controller" method="post">
@@ -55,7 +60,28 @@
             </div>
         </c:otherwise>
     </c:choose>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/js_mainpage.js"></script>
+    <table border="2" align="center" width="80%" cellspacing="0">
+        <tr>
+            <th>Book name</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Publishing office</th>
+            <th>Rating</th>
+            <th>Prod year</th>
+            <th>ISBN</th>
+        </tr>
+        <c:forEach items="${list}" var="book">
+            <tr>
+                <td>${book.getB_name()}</td>
+                <td>${book.getAuthor_id()}</td>
+                <td>${book.getGenres_id()}</td>
+                <td>${book.getId_pulb_office()}</td>
+                <td>${book.getRating()}</td>
+                <td>${book.getProd_year()}</td>
+                <td>${book.getB_isbn()}</td>
+            </tr>
+        </c:forEach>
+    </table>
 </form>
 </body>
 </html>

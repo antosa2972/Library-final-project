@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DAOUserSQL implements DAOUser {
-    private static final String ADD_NEW_USER_SQL = "INSERT INTO library_bd.users (u_username, u_telephone, u_password, u_email, u_name, u_surname,user_r_id) VALUES " +
+    private static final String ADD_NEW_USER_SQL = "INSERT INTO library_bd.users (u_username, u_telephone, u_password, u_email, u_name, u_surname,user_role_ur_id) VALUES " +
             "(?,?,?,?,?,?,?)";
     private static final String SEARCH_USER_SQL = "SELECT * FROM users WHERE u_username = ? AND u_password = ?";
     private static int ADMIN_ID = 1;
